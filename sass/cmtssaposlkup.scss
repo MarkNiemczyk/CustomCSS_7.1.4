@@ -1,0 +1,14 @@
+/*  cmtssaposlkup - Committee Member Lookup */
+
+
+//			/skins/7.1.3/AAcss/global.css
+
+// Reviewed 13.04.2014 - MN
+
+
+
+	table.dataTable thead th,
+	table.dataTable tbody td  {
+		@extend %typography;
+	}
+

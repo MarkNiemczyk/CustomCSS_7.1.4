@@ -1,0 +1,32 @@
+/*  censsamngemp - Manage My Employment */
+
+
+//			/skins/7.1.3/AAcss/global.css
+//			/skins/7.0.2/AAcss/censsamngemp.css
+
+// Reviewed 12.04.2014 - MN
+
+
+
+	div#aaCenssamngempWizstep1,
+	div#aaCenssamngempDisplayEmp,
+	div#aaCenssamngempUpdateEmp {
+		@extend %typography;
+		box-shadow: none;
+	}
+	
+	div#aaCenssamngempWizstep1:before, 
+	div#aaCenssamngempWizstep1:after,
+	div#aaCenssamngempDisplayEmp:before,
+	div#aaCenssamngempDisplayEmp:after,
+	div#aaCenssamngempUpdateEmp:before,
+	div#aaCenssamngempUpdateEmp:after {
+		display: none;
+	}
+
+	#aaCenssamngempUpdateEmp {
+		.aaLabel label {
+			margin-top: auto;
+		}
+	}
+

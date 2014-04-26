@@ -1,0 +1,229 @@
+/*	BOMA/Chicago Custom CSS for SSA pages
+*		see also the ssaheader.js file
+*	April 2014 (developed for AA v7.1.4)  */
+
+//	Mark Niemczyk
+
+
+/* BOMA/Chicago customizations to SSA pages */
+
+
+// Typography, as used in the bomachicago.org web site SSI design
+$base-font-family:	'Source Sans Pro';
+$base-font-size:	14px;
+$base-leading:		1.4;						// Note the web site uses 1.5, but on SSA pages this works better
+$base-fore-color:	rgb(0, 0, 0);
+$base-back-color:	rgba(0, 0, 0, 0);
+$boma-blue:			rgb(57, 163, 215);
+
+
+
+// Standard typography settings
+%typography {
+	font-family: $base-font-family;
+	font-size: $base-font-size;
+	line-height: $base-leading;
+}
+
+%typography-and-color {
+	@extend %typography;
+	color: $base-fore-color;
+	background-color: $base-back-color;
+}
+
+%colHeadings {
+	font-size: .9em;
+	line-height: $base-leading / .9;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+%section_hdr {
+	font-size: 1.1em;
+	line-height: $base-leading / 1.1;    
+}
+
+%groupTitle {
+    @extend %bomachi_hdr;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+
+//  The box-sizing: border-box layout model is employed throughout
+#bomachi_Styled,
+#bomachi_Styled *,
+section,
+section * {
+    box-sizing: border-box;
+}
+
+
+
+
+// The new main container & appearance
+#bomachi_Styled {
+	@extend %typography-and-color;
+	width: 99%;
+	max-width: 624px;
+	margin: 0 auto;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #e1e1e1;
+	border-radius: 4px;
+	padding: 1% 1.5% 1.5% 1.5%;
+
+	button,
+	input,
+	select,
+	textarea {
+		@extend %typography;
+	}
+
+	.pure-g,
+	.pure-g [class*="pure-u"],
+	.pure-g-r [class*="pure-u"] {
+    	font-family: inherit;
+    	font-size: inherit;
+    	line-height: inherit;
+    	letter-spacing: normal;
+	}
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+}
+
+
+// toggleClass - used to prevent fouc
+
+.hide4now {
+    visibility: hidden;
+	display: none;
+}
+
+
+// standard appearance
+
+#bomachi_Styled {
+    #bomachi_Hdr {
+        @extend %section_hdr;
+        width: 100%;
+    	margin: 1em auto 1.5em auto;
+
+        .bomachi_pg_customer {
+            span {
+                font-weight: bolder;
+                padding-right: 1.25em;
+            }
+        }
+    }
+
+	#bomachi_Body {
+        width: 100%;
+		h3 {
+			@extend %groupTitle;
+		}
+	}
+
+    #bomachi_Ftr {
+        width: 100%;
+    	margin-top: 5em;
+    	text-align: center;
+    }
+    
+	.centerText {
+		text-align: center;
+	}
+
+	.colHeadings {
+		@extend %colHeadings;
+		text-align: center;
+	}
+}
+
+// standard UX - Buttons
+
+#bomachi_Styled {
+	.pure-button {
+		color: $boma-blue;
+		font-weight: 600;
+		padding: 0.35em 1.1em;
+		border-radius: 5px;
+	}
+
+	.bomachi_centerButton {
+		display: block;
+		margin-top: 2em;
+		margin-right: auto;
+		margin-left: auto;
+		text-align: center;
+	}
+
+	.bomachi_rightButton {
+		margin-top: 1em;
+		text-align: center;
+	}
+
+	.buttonIsShadowed {
+		box-shadow: 4px 4px 7px #666;
+
+		&:active {
+    	    box-shadow: 2px 2px 4px #666;
+    	    transform: translate(2px, 2px);
+		}
+	}
+}
+
+
+// Tick mark
+
+#bomachi_Styled {
+	.tickmark {
+	    display:inline-block;
+	    width: 22px;
+	    height: 22px;
+	    transform: rotate(45deg);
+	}
+
+	.stem {
+	    position: absolute;
+	    width: 3px;
+	    height: 9px;
+	    background-color: black;
+	    left: 11px;
+	    top: 6px;
+	}
+
+	.kick {
+	    position: absolute;
+	    width: 3px;
+	    height: 3px;
+	    background-color: black;
+	    left: 8px;
+	    top: 12px;
+	}
+}
+
+
+
+@import "censsacmpadmin";				// Company / Building Employee Administration
+
+@import "censsaxxxprofile";				// Update My Profile
+
+@import "censsacmpprofile";				// Company Profile, Building Profile
+
+@import "censsacustbio";				// Update My Bio
+
+@import "censsacustdirectorypref";		// Membership Directory Preferences
+
+@import "censsamngemp";					// Manage My Employment
+
+@import "cmtssaposlkup";				// Committee Member Lookup
+
+@import "ecmssacustcomm";				// Communication Preferences
+
+
+/*	End of BOMA/Chicago Custom CSS for SSA pages  */

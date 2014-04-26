@@ -1,0 +1,119 @@
+/*  censsacmpprofile - Building Profile, Company Profile */
+
+
+//			/skins/7.1.3/AAcss/global.css
+//			/skins/7.0.2/AAcss/censsaindprofile.css
+
+// Reviewed 12.04.2014 - MN
+
+
+
+	.aaCenssaprofileCmpHdrTbl {
+		width: 100%;
+		text-align: center;
+		
+		tbody,
+		tr {
+			width: 100%;
+		}
+		
+		td {
+			text-align: left;
+		}
+	}
+
+
+	.aaCenssaprofileSubmit {
+		li label {
+			display: none;
+		}
+	}
+	
+	#aaCenssaDispProfWrapper {
+		label {
+			width: 45%;
+		}
+		
+		label,
+		p {
+			margin-top: auto;
+		}
+	}
+	
+	.aaProfileDataWrapper + img {
+		margin-top: -4px;
+		padding-left: 1em;
+	}
+
+
+	#aaCenssaprofileDispProfDtlLaborContracts,
+	#aaCenssaprofileDispProfDtlLaborContracts .aaProfileDataWrapper,
+	#aaCenssaprofileDispProfDtlLaborContracts .aaProfileDataWrapper p {
+		width: 100%;
+	}
+
+
+	#aaCenssaprofileDispProfDtlLaborContracts {
+
+		ul.aaFormFields {
+			box-sizing: border-box;
+
+			li {
+				box-sizing: inherit;
+				display: list-item;
+				min-height: 0;
+			}
+		}
+
+		.aaProfileAttr {
+			width: 25%;
+			clear: left;
+			label {
+				box-sizing: inherit;
+				margin-right: 0;
+				width: 100%;
+			}
+			aaInlineValidationWrapper {
+				display: none;
+			}
+		}
+
+		.aaProfileAttrCvar {
+			width: 60%;
+
+			label {
+			    box-sizing: inherit;
+			    margin-right: 0;
+			    width: 100%;
+		    }
+			
+			.aaInlineValidationWrapper {
+				display: none;
+			}
+		}
+
+		.aaProfileAttrNvar {
+		    width: 15%;
+
+			label {
+			    box-sizing: inherit;
+			    margin-right: 0;
+				width: 100%;
+			}
+			
+			.aaInlineValidationWrapper {
+				display: none;
+			}
+	    }
+
+		.aaProfileAttrFile {
+			clear: left;
+			margin-bottom: 2em;
+		}
+
+		.aaProfileAttrNvar + .aaProfileAttr label,
+		.aaProfileAttrNvar + .aaProfileAttr + .aaProfileAttrCvar label,
+		.aaProfileAttrNvar + .aaProfileAttr + .aaProfileAttrCvar + .aaProfileAttrNvar label {
+			display: none;
+		}	
+	}

@@ -1,0 +1,29 @@
+/*  censsacmpadmin - Company / Building Employee Administration */
+
+
+//			/skins/7.1.3/AAcss/global.css
+//			/skins/7.0.2/AAcss/censsacmpadmin.css
+
+// Reviewed 12.04.2014 - MN
+
+
+
+	#censsacmpadminDispPageWrapper {
+		label {
+			@extend %typography;
+			margin-top: auto;
+			width: auto;
+		}
+
+		ul li {
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+	}
+	
+	.aaCenssacmpadminDispEmpTbl {
+		a, label, p {
+			line-height: 1.4;
+		}
+	}
+

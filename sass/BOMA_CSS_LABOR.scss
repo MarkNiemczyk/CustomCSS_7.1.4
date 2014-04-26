@@ -1,0 +1,152 @@
+<style>
+
+/*! PocketGrid 1.1.0
+* Copyright 2013 Arnaud Leray
+* MIT License
+*/
+/* Border-box-sizing */
+.block-group, .block, .block-group:after, .block:after, .block-group:before, .block:before {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Clearfix */
+.block-group {
+  *zoom: 1;
+}
+.block-group:before, .block-group:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.block-group:after {
+  clear: both;
+}
+
+.block-group {
+  /* ul/li compatibility */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Nested grid */
+.block-group > .block-group {
+  clear: none;
+  float: left;
+  margin: 0 !important;
+}
+
+/* Default block */
+.block {
+  float: left;
+  width: 100%;
+}
+
+
+
+/*! BOMA customization
+* October 2013 (AA v7.0)
+* Mark Niemczyk
+*/
+
+
+#aaSuperResponsiveContainer .aaRsContainer,
+#aaSuperResponsiveContainer .aaRsContainer  .aaRsSixteen.aaRsColumns {
+width: 97%;
+margin-left: auto;
+margin-right: auto;
+}
+
+#aaSuperResponsiveContainer  #aaCenssaprofileDispProfDtlLaborContracts,
+#aaSuperResponsiveContainer  #aaCenssaprofileDispProfDtlLaborContracts .aaProfileDataWrapper,
+#aaSuperResponsiveContainer  #aaCenssaprofileDispProfDtlLaborContracts .aaProfileDataWrapper p {
+	width: 100%;
+	}
+
+#aaSuperResponsiveContainer  #aaCenssaprofileDispProfDtlLaborContracts  ul.aaFormFields {
+	box-sizing: border-box;
+	}
+
+#aaSuperResponsiveContainer  #aaCenssaprofileDispProfDtlLaborContracts  ul.aaFormFields li {
+	box-sizing: inherit;
+	display: list-item;
+	min-height: 0;
+	}
+
+#aaSuperResponsiveContainer  #aaCenssaprofileDispProfDtlLaborContracts .aaProfileAttr {
+	width: 25%;
+	clear: left;
+    }
+
+#aaSuperResponsiveContainer  #aaCenssaprofileDispProfDtlLaborContracts .aaProfileAttr label {
+    box-sizing: inherit;
+    margin-right: 0;
+    width: 100%;
+    }
+
+#aaSuperResponsiveContainer  #aaCenssaprofileDispProfDtlLaborContracts .aaProfileAttr  aaInlineValidationWrapper{
+	display: none;
+	}
+
+#aaSuperResponsiveContainer #aaCenssaprofileDispProfDtlLaborContracts .aaProfileAttrCvar {
+width: 60%;
+}
+
+#aaSuperResponsiveContainer  #aaCenssaprofileDispProfDtlLaborContracts .aaProfileAttrCvar label {
+    box-sizing: inherit;
+    margin-right: 0;
+    width: 100%;
+    }
+
+#aaSuperResponsiveContainer  #aaCenssaprofileDispProfDtlLaborContracts .aaProfileAttrCvar  aaInlineValidationWrapper{
+	display: none;
+	}
+
+#aaSuperResponsiveContainer  #aaCenssaprofileDispProfDtlLaborContracts .aaProfileAttrNvar {
+    width: 15%;
+    }
+
+#aaSuperResponsiveContainer  #aaCenssaprofileDispProfDtlLaborContracts .aaProfileAttrNvar   label {
+    box-sizing: inherit;
+    margin-right: 0;
+	width: 100% ;}
+
+#aaSuperResponsiveContainer  #aaCenssaprofileDispProfDtlLaborContracts .aaProfileAttrNvar  aaInlineValidationWrapper{
+	display: none;
+	}
+
+#aaSuperResponsiveContainer  #aaCenssaprofileDispProfDtlLaborContracts .aaProfileAttrFile {
+	clear: left;
+	margin-bottom: 2em;
+	}
+
+#aaSuperResponsiveContainer  #aaCenssaprofileDispProfDtlLaborContracts .aaProfileAttrNvar + .aaProfileAttr label,
+#aaSuperResponsiveContainer  #aaCenssaprofileDispProfDtlLaborContracts .aaProfileAttrNvar + .aaProfileAttr + .aaProfileAttrCvar label,
+#aaSuperResponsiveContainer  #aaCenssaprofileDispProfDtlLaborContracts .aaProfileAttrNvar + .aaProfileAttr + .aaProfileAttrCvar + .aaProfileAttrNvar label {
+	display: none;
+	}
+
+body .aaProfileContentWrapper li p.noLeftPadding {
+	padding-left: 0 !important;
+	}
+	
+</style>
+
+<script type="text/javascript">
+
+$(document).ready(function()  {
+	var lbrSection = $('#aaCenssaprofileDispProfDtlLaborContracts');
+	lbrSection.addClass('block-group');
+	lbrSection.find('.aaProfileAttr, .aaProfileAttrCvar, .aaProfileAttrNvar').addClass('block');
+	lbrSection.find('p').addClass('noLeftPadding');
+	lbrSection.find("li.aaProfileAttrNvar")
+		.find("div.aaProfileDataWrapper").each(function(i) {
+			if ($( this ).html()==="<p></p>") {
+				$(this).html("<p>&nbsp</p>");
+				}
+	});
+});
+
+</script>

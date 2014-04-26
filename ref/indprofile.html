@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Mark Niemczyk's Web Portfolio and Resume" />
+    <title>IndPRofile Test</title>
+</head>
+<body class="bomaEmbedded censsaindprofile"><!-- Must be included in the SSA header -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+							
+
+<div class="aaSSAPluginContainer aaRsSuperContainer  aaRsFullWidth" id="aaSuperResponsiveContainer">    <!-- AA Super Container -->
+
+	<div class="aaRsContainer">	<!-- AA Container -->
+
+		<div class="aaRsSixteen aaRsColumns">  <!-- AA 16 Col for content -->
+			<div class="aaStyleOuter aaProfileContentWrapper" id="aaCenssaDispProfWrapper">
+				<div class="aaStyleInner"><br> 
+				
+				
+
+				<script>
+				$(document).ready(function () {
+					'use strict';
+					$('#aaCenssaDispProfWrapper .aaStyleInner')
+						.find('br')				// clean-up extraneous <br> used for styling
+							.remove()
+						.end()
+						.prepend('<section id="bomachi_tabbedContent"></section>');
+					$('#bomachi_tabbedContent').prepend('<div id="bomachi_vNav"><ul></ul></div><div id="bomachi_eachContent"></div>');
+					var $profile_buckets = $('.aaCenssaprofile').detach();
+					$profile_buckets.each(function (idx) {
+						$(this)
+							.attr('data-bomachiTab', idx)
+							.find('h3').each(function () {			// Section heading, e.g. Contact information
+								$('#bomachi_vNav ul').append('<li data-bomachiTab=' + idx +'>' + $(this).text() +'</li>');
+								});
+					});
+					$profile_buckets.appendTo('#bomachi_eachContent');
+					
+					var $navBlock = $('#bomachi_vNav');
+					$navBlock
+						.find('ul li:first-child')
+							.addClass('first current')
+							.end()
+						.find('ul li:last-child')
+							.addClass('last');
+					$('#bomachi_eachContent .aaCenssaprofile:first-of-type')
+							.addClass('current'));			
+				});
+				
+				$(function() {
+					var $tabControls = $('#bomachi_vNav ul:first-of-type li');
+					var $tabWorkspace = $('#bomachi_tabbedContent [data-bomachiTab]');
+					
+				    $tabControls.each(function() {
+				        $(this).click(function() {
+				            //remove previous class and add it to clicked tab
+				            if (!$(this).hasClass('current')) {
+					            var itemNbr = $(this).attr('data-bomachiTab');
+					            $tabWorkspace.removeClass('current');
+								$('[data-bomachiTab = ' + itemNbr + ']').addClass('current');
+				            }
+
+				        });
+					});
+
+
+
+				
+				});
+				</script>
+				
+				<style>
+#bomachi_tabbedContent
+{
+    width: 960px;
+    margin: 0px auto;
+    padding-top: 20px;
+    min-height: 600px;
+}
+
+#bomachi_tabbedContent h1, #bomachi_tabbedContent h4, #bomachi_tabbedContent p, #bomachi_tabbedContent pre, #bomachi_tabbedContent ul, #bomachi_tabbedContent li
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+#bomachi_tabbedContent h1 {
+    vertical-align:middle;
+    padding-bottom:20px;
+}
+
+
+#bomachi_tabbedContent li
+{
+    outline: 0;
+    text-decoration: none;
+    -webkit-transition-property: background color;
+    -moz-transition-property: background color;
+    -o-transition-property: background color;
+    -ms-transition-property: background color;
+    transition-property: background color;
+    -webkit-transition-duration: 0.12s;
+    -moz-transition-duration: 0.12s;
+    -o-transition-duration: 0.12s;
+    -ms-transition-duration: 0.12s;
+    transition-duration: 0.12s;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+#bomachi_vNav
+{
+    height: 100%;
+    margin: auto;
+    color: #333;
+    font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+}
+
+#bomachi_vNav >ul
+{
+    float: left;
+    width: 210px;
+    display: block;
+    position: relative;
+    top: 0;
+    border: 1px solid #DDD;
+    border-right-width: 0;
+    margin: auto 0 !important;
+    padding:0;
+}
+
+#bomachi_vNav >ul >li
+{
+    width: 180px;
+    list-style-type: none;
+    display: block;
+    text-shadow: 0px 1px 1px #F2F1F0;
+    font-size: 1.11em;
+    position: relative;
+    border-right-width: 0;
+    border-bottom: 1px solid #DDD;
+    margin: auto;
+    padding: 10px 15px !important;  
+    background: whiteSmoke; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #f2f2f2 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #f2f2f2)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 0%, #f2f2f2 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffffff 0%, #f2f2f2 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ffffff 0%, #f2f2f2 100%); /* IE10+ */
+    background: linear-gradient(top, #ffffff 0%, #f2f2f2 100%); /* W3C */       
+}
+
+#bomachi_vNav >ul >li.current
+{
+    color: black;
+    border-right: none;
+    z-index: 10;
+    background: white !important;
+    position: relative;
+    moz-box-shadow: inset 0 0 35px 5px #fafbfd;
+    -webkit-box-shadow: inset 0 0 35px 5px #fafbfd;
+    box-shadow: inset 0 0 35px 5px #fafbfd;
+}
+
+#bomachi_vNav >ul >li.first.current
+{
+    border-bottom: 1px solid #DDD;
+}
+
+#bomachi_vNav >ul >li.last
+{
+    border-bottom: none;
+}
+
+#bomachi_vNav >div.aaCenssaprofile
+{
+    margin-left: 210px;
+    border: 1px solid #ddd;
+    background-color: #FFF;
+    min-height: 400px;
+    position: relative;
+    z-index: 9;
+    padding: 12px;
+    moz-box-shadow: inset 0 0 35px 5px #fafbfd;
+    -webkit-box-shadow: inset 0 0 35px 5px #fafbfd;
+    box-shadow: inset 0 0 35px 5px #fafbfd;
+    display: none;
+    padding: 25px;
+}
+
+#bomachi_vNav >div.aaCenssaprofile >h4
+{
+    font-size: 1.2em;
+    color: Black;
+    text-shadow: 0px 1px 1px #F2F1F0;
+    border-bottom: 1px dotted #EEEDED;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+#bomachi_vNav div[data-bomachiTab] {display: none;}
+#bomachi_vNav div.current {display: block;}
+				</style>
+				
+				
+				
+				
+				
+					<div id="aaCenssaprofileDispProfDtlContactInformation" class="aaCenssaprofile">
+						<ul class="aaFormFields">
+							<form action="CENSSAINDPROFILE.section_update" method="GET">
+								<input type="hidden" name="p_cust_id" value="1182972">
+								<input type="hidden" name="p_profile_ty" value="INDIVIDUAL_PROFILE">
+								<input type="hidden" name="p_section_nm" value="Contact Information">
+								<input type="hidden" name="p_format" value="110">
+								<input type="hidden" name="p_referrer" value="http://dev.bomachi.esuitetools.com/users/ssa/eNrLKCkpsNLXT0kt00vKz01MzsjUSy0uzSxJLcnPzynWS87P1YeKA5UUFyfqJ6fmAanMvJSCovy0zJxUvZTM4oKcxMp4KN--AMaKL6m09fRz8QzzdAl19IkPCPJ38_RxVSuITy4tLonPTLE1NLQwsjQ3AgDuGTA0">
+								<input type="hidden" name="p_skip_confirm_fl" value="N">
+								<div class="aaHeaderwrapper">
+									<div id="aaCenssaprofileDispProfHdrContactInformation" class="aaHeading">
+										<h3>Contact Information</h3>
+										<ul class="aaSubmission aaCenssaprofileSubmit">
+											<li>
+												<label></label>
+												<input type="submit" value="Edit" class="aaSubmitButton" id="aaCenssaprofileDispProfHdrContactInformationEdit">
+											</li>
+										</ul>
+									</div> <!-- end aaCenssaprofileDispProfHdrContactInformation -->
+								</div> <!-- End Header wrapper -->
+							</form>
+							<li id="aaProfilePrefixNm">
+								<label>Prefix:</label>
+								<div class="aaProfileDataWrapper">
+									<p>Mr.</p>
+								</div>
+								<div class="aaInlineValidationWrapper">
+									<div class="aaValidationWrapper-Inner">
+										<span class="aaInlineValidationIcon"></span>
+										<span class="aaValidationTxt"></span>
+									</div>
+								</div>
+							</li><!-- close li id="aaProfilePrefixNm" -->
+							<li id="aaProfileFirstNm">
+								<label>First Name:<font color="RED">*</font></label>
+								<div class="aaProfileDataWrapper"><p>Mark</p></div>
+								<div class="aaInlineValidationWrapper">
+									<div class="aaValidationWrapper-Inner">
+										<span class="aaInlineValidationIcon"></span>
+										<span class="aaValidationTxt"></span>
+									</div>
+								</div>
+							</li><!-- close li id="aaProfileFirstNm" -->
+							<li id="aaProfileInformalNm">
+								<label>Nickname:</label>
+								<div class="aaProfileDataWrapper">
+									<p>Marcus</p>
+								</div>
+								<div class="aaInlineValidationWrapper">
+									<div class="aaValidationWrapper-Inner">
+										<span class="aaInlineValidationIcon"></span>
+										<span class="aaValidationTxt"></span>
+									</div>
+								</div>
+							</li><!-- close li id="aaProfileInformalNm" -->
+							<li id="aaProfileMiddleNm">
+								<label>Middle Name:</label>
+								<div class="aaProfileDataWrapper">
+									<p>Stephen</p>
+								</div>
+								<div class="aaInlineValidationWrapper">
+									<div class="aaValidationWrapper-Inner">
+										<span class="aaInlineValidationIcon"></span>
+										<span class="aaValidationTxt"></span>
+									</div>
+								</div>
+							</li><!-- close li id="aaProfileMiddleNm" -->
+							<li id="aaProfileLastNm">
+								<label>Last Name:<font color="RED">*</font></label>
+								<div class="aaProfileDataWrapper">
+									<p>Niemczyk</p>
+								</div>
+								<div class="aaInlineValidationWrapper">
+									<div class="aaValidationWrapper-Inner">
+										<span class="aaInlineValidationIcon"></span>
+										<span class="aaValidationTxt"></span>
+									</div>
+								</div>
+							</li><!-- close li id="aaProfileLastNm" -->
+							<li id="aaProfileSuffixNm">
+								<label>Suffix:</label>
+								<div class="aaProfileDataWrapper">
+									<p></p>
+								</div>
+								<div class="aaInlineValidationWrapper">
+									<div class="aaValidationWrapper-Inner">
+										<span class="aaInlineValidationIcon"></span>
+										<span class="aaValidationTxt"></span>
+									</div>
+								</div>
+							</li><!-- close li id="aaProfileSuffixNm" -->
+							<li id="aaProfileAddress">
+								<label>Work Address:<font color="RED">*</font></label>
+								<div class="aaProfileDataWrapper">
+									<p>4554 N Malden St Apt 110<br>Chicago, IL 60640-6754<br></p>
+								</div>
+								<div class="aaInlineValidationWrapper">
+									<div class="aaValidationWrapper-Inner">
+										<span class="aaInlineValidationIcon"></span>
+										<span class="aaValidationTxt"></span>
+									</div>
+								</div>
+							</li><!-- close li id="aaProfileAddrSerno" -->
+							<li id="aaProfilePhone">
+								<label>Work Phone:<font color="RED">*</font></label>
+								<div class="aaProfileDataWrapper">
+									<p>1 630 699 5126</p>
+								</div>
+								<img src="/images/tick2.gif">
+								<div class="aaInlineValidationWrapper">
+									<div class="aaValidationWrapper-Inner">
+										<span class="aaInlineValidationIcon"></span>
+										<span class="aaValidationTxt"></span>
+									</div>
+								</div>
+							</li><!-- close li id="aaProfileAddrSerno" -->
+							<li id="aaProfilePhone">
+								<label>Mobile:</label>
+								<div class="aaProfileDataWrapper">
+									<p></p>
+								</div>
+								<div class="aaInlineValidationWrapper">
+									<div class="aaValidationWrapper-Inner">
+										<span class="aaInlineValidationIcon"></span>
+										<span class="aaValidationTxt"></span>
+									</div>
+								</div>
+							</li><!-- close li id="aaProfileAddrSerno" -->
+							<li id="aaProfileCyber">
+								<label>Work Email:<font color="RED">*</font></label>
+								<div class="aaProfileDataWrapper">
+									<p>mniemczyk@mac.com</p>
+								</div>
+								<div class="aaInlineValidationWrapper">
+									<div class="aaValidationWrapper-Inner">
+										<span class="aaInlineValidationIcon"></span>
+										<span class="aaValidationTxt"></span>
+									</div>
+								</div>
+							</li><!-- close li id="aaProfileAddrSerno" -->
+							<li id="aaProfilePhone">
+								<label>Home Phone:</label>
+								<div class="aaProfileDataWrapper"><p></p></div>
+								<div class="aaInlineValidationWrapper">
+									<div class="aaValidationWrapper-Inner">
+										<span class="aaInlineValidationIcon"></span>
+										<span class="aaValidationTxt"></span>
+									</div>
+								</div>
+							</li><!-- close li id="aaProfileAddrSerno" -->
+							<li id="aaProfileCyber">
+								<label>Home Email:</label>
+								<div class="aaProfileDataWrapper">
+									<p>mniemczyk@me.com</p>
+								</div>
+								<img src="/images/tick2.gif">
+								<div class="aaInlineValidationWrapper">
+									<div class="aaValidationWrapper-Inner">
+										<span class="aaInlineValidationIcon"></span>
+										<span class="aaValidationTxt"></span>
+									</div>
+								</div>
+							</li><!-- close li id="aaProfileAddrSerno" -->
+						</ul><!-- close ul class="aaFormFields" -->
+					</div> <!-- end aaCenssaprofileDispProfDtlContactInformation -->
+					<br>
+					<div id="aaCenssaprofileDispProfDtlUsername" class="aaCenssaprofile">
+						<ul class="aaFormFields">
+							<form action="CENSSAINDPROFILE.section_update" method="GET">
+<input type="hidden" name="p_cust_id" value="1182972">
+<input type="hidden" name="p_profile_ty" value="INDIVIDUAL_PROFILE">
+<input type="hidden" name="p_section_nm" value="Username">
+<input type="hidden" name="p_format" value="110">
+<input type="hidden" name="p_referrer" value="http://dev.bomachi.esuitetools.com/users/ssa/eNrLKCkpsNLXT0kt00vKz01MzsjUSy0uzSxJLcnPzynWS87P1YeKA5UUFyfqJ6fmAanMvJSCovy0zJxUvZTM4oKcxMp4KN--AMaKL6m09fRz8QzzdAl19IkPCPJ38_RxVSuITy4tLonPTLE1NLQwsjQ3AgDuGTA0">
+<input type="hidden" name="p_skip_confirm_fl" value="N">
+<div class="aaHeaderwrapper">
+<div id="aaCenssaprofileDispProfHdrUsername" class="aaHeading">
+<h3>Username</h3>
+<ul class="aaSubmission aaCenssaprofileSubmit"><li><label></label><input type="submit" value="Edit" class="aaSubmitButton" id="aaCenssaprofileDispProfHdrUsernameEdit"></li></ul>
+</div> <!-- end aaCenssaprofileDispProfHdrUsername -->
+</div> <!-- End Header wrapper -->
+</form>
+							<li id="aaProfileLoginId"><label>User Name: 
+:<font color="RED">*</font></label><div class="aaProfileDataWrapper"><p>314159</p></div><div class="aaInlineValidationWrapper"><div class="aaValidationWrapper-Inner"><span class="aaInlineValidationIcon"></span><span class="aaValidationTxt"></span></div></div></li><!-- close li id="aaProfileLoginId" -->
+						</ul><!-- close ul class="aaFormFields" -->
+					</div> <!-- end aaCenssaprofileDispProfDtlUsername -->
+					<br>
+					<div id="aaCenssaprofileDispProfDtlPassword" class="aaCenssaprofile">
+						<ul class="aaFormFields">
+							<form action="CENSSAINDPROFILE.section_update" method="GET">
+<input type="hidden" name="p_cust_id" value="1182972">
+<input type="hidden" name="p_profile_ty" value="INDIVIDUAL_PROFILE">
+<input type="hidden" name="p_section_nm" value="Password">
+<input type="hidden" name="p_format" value="110">
+<input type="hidden" name="p_referrer" value="http://dev.bomachi.esuitetools.com/users/ssa/eNrLKCkpsNLXT0kt00vKz01MzsjUSy0uzSxJLcnPzynWS87P1YeKA5UUFyfqJ6fmAanMvJSCovy0zJxUvZTM4oKcxMp4KN--AMaKL6m09fRz8QzzdAl19IkPCPJ38_RxVSuITy4tLonPTLE1NLQwsjQ3AgDuGTA0">
+<input type="hidden" name="p_skip_confirm_fl" value="N">
+<div class="aaHeaderwrapper">
+<div id="aaCenssaprofileDispProfHdrPassword" class="aaHeading">
+<h3>Password</h3>
+<ul class="aaSubmission aaCenssaprofileSubmit"><li><label></label><input type="submit" value="Edit" class="aaSubmitButton" id="aaCenssaprofileDispProfHdrPasswordEdit"></li></ul>
+</div> <!-- end aaCenssaprofileDispProfHdrPassword -->
+</div> <!-- End Header wrapper -->
+</form>
+							<li id="aaProfilePassword"><label>Password: 
+
+:<font color="RED">*</font></label><div class="aaProfileDataWrapper"><p>**********</p></div><div class="aaInlineValidationWrapper"><div class="aaValidationWrapper-Inner"><span class="aaInlineValidationIcon"></span><span class="aaValidationTxt"></span></div></div></li><!-- close li id="aaProfilePassword" -->
+						</ul><!-- close ul class="aaFormFields" -->
+					</div> <!-- end aaCenssaprofileDispProfDtlPassword -->
+					<br> 
+					<div id="aaCenssaprofileDispProfDtlBOMAInternational" class="aaCenssaprofile">
+						<ul class="aaFormFields">
+							<form action="CENSSAINDPROFILE.section_update" method="GET">
+<input type="hidden" name="p_cust_id" value="1182972">
+<input type="hidden" name="p_profile_ty" value="INDIVIDUAL_PROFILE">
+<input type="hidden" name="p_section_nm" value="BOMA International">
+<input type="hidden" name="p_format" value="110">
+<input type="hidden" name="p_referrer" value="http://dev.bomachi.esuitetools.com/users/ssa/eNrLKCkpsNLXT0kt00vKz01MzsjUSy0uzSxJLcnPzynWS87P1YeKA5UUFyfqJ6fmAanMvJSCovy0zJxUvZTM4oKcxMp4KN--AMaKL6m09fRz8QzzdAl19IkPCPJ38_RxVSuITy4tLonPTLE1NLQwsjQ3AgDuGTA0">
+<input type="hidden" name="p_skip_confirm_fl" value="N">
+<div class="aaHeaderwrapper">
+<div id="aaCenssaprofileDispProfHdrBOMAInternational" class="aaHeading">
+<h3>BOMA International</h3>
+
+</div> <!-- end aaCenssaprofileDispProfHdrBOMAInternational -->
+</div> <!-- End Header wrapper -->
+</form>
+							<li class="aaProfileAttr"><label>BOMA International Member Type:</label><div class="aaProfileDataWrapper"><p>Not applicable</p></div><div class="aaInlineValidationWrapper"><div class="aaValidationWrapper-Inner"><span class="aaInlineValidationIcon"></span><span class="aaValidationTxt"></span></div></div></li><!-- close li class="aaProfileAttr" -->
+							<li class="aaProfileAttrCvar"><label>BOMA International ID:</label><div class="aaProfileDataWrapper"><p></p></div><div class="aaInlineValidationWrapper"><div class="aaValidationWrapper-Inner"><span class="aaInlineValidationIcon"></span><span class="aaValidationTxt"></span></div></div></li><!-- close li class="aaProfileAttrCvar" -->
+						</ul><!-- close ul class="aaFormFields" -->
+					</div> <!-- end aaCenssaprofileDispProfDtlBOMAInternational -->
+					<br> 
+					<div id="aaCenssaprofileDispProfDtlAdditionalInformation" class="aaCenssaprofile">
+						<ul class="aaFormFields">
+							<form action="CENSSAINDPROFILE.section_update" method="GET">
+<input type="hidden" name="p_cust_id" value="1182972">
+<input type="hidden" name="p_profile_ty" value="INDIVIDUAL_PROFILE">
+<input type="hidden" name="p_section_nm" value="Additional Information">
+<input type="hidden" name="p_format" value="110">
+<input type="hidden" name="p_referrer" value="http://dev.bomachi.esuitetools.com/users/ssa/eNrLKCkpsNLXT0kt00vKz01MzsjUSy0uzSxJLcnPzynWS87P1YeKA5UUFyfqJ6fmAanMvJSCovy0zJxUvZTM4oKcxMp4KN--AMaKL6m09fRz8QzzdAl19IkPCPJ38_RxVSuITy4tLonPTLE1NLQwsjQ3AgDuGTA0">
+<input type="hidden" name="p_skip_confirm_fl" value="N">
+<div class="aaHeaderwrapper">
+<div id="aaCenssaprofileDispProfHdrAdditionalInformation" class="aaHeading">
+<h3>Additional Information</h3>
+<ul class="aaSubmission aaCenssaprofileSubmit"><li><label></label><input type="submit" value="Edit" class="aaSubmitButton" id="aaCenssaprofileDispProfHdrAdditionalInformationEdit"></li></ul>
+</div> <!-- end aaCenssaprofileDispProfHdrAdditionalInformation -->
+</div> <!-- End Header wrapper -->
+</form>
+							<li class="aaProfileAttr"><label>Exclude from Online Membership Directory:</label><div class="aaProfileDataWrapper"><p>Yes - Exclude</p></div><div class="aaInlineValidationWrapper"><div class="aaValidationWrapper-Inner"><span class="aaInlineValidationIcon"></span><span class="aaValidationTxt"></span></div></div></li><!-- close li class="aaProfileAttr" -->
+							<li class="aaProfileAttrCvar"><label>Comments:</label><div class="aaProfileDataWrapper"><p></p></div><div class="aaInlineValidationWrapper"><div class="aaValidationWrapper-Inner"><span class="aaInlineValidationIcon"></span><span class="aaValidationTxt"></span></div></div></li><!-- close li class="aaProfileAttrCvar" -->
+						</ul><!-- close ul class="aaFormFields" -->
+					</div> <!-- end aaCenssaprofileDispProfDtlAdditionalInformation -->
+					<br>
+					<div id="aaCenssaprofileDispProfDtlProfessionalDesignations" class="aaCenssaprofile">
+						<ul class="aaFormFields">
+							<form action="CENSSAINDPROFILE.section_update" method="GET">
+<input type="hidden" name="p_cust_id" value="1182972">
+<input type="hidden" name="p_profile_ty" value="INDIVIDUAL_PROFILE">
+<input type="hidden" name="p_section_nm" value="Professional Designations">
+<input type="hidden" name="p_format" value="110">
+<input type="hidden" name="p_referrer" value="http://dev.bomachi.esuitetools.com/users/ssa/eNrLKCkpsNLXT0kt00vKz01MzsjUSy0uzSxJLcnPzynWS87P1YeKA5UUFyfqJ6fmAanMvJSCovy0zJxUvZTM4oKcxMp4KN--AMaKL6m09fRz8QzzdAl19IkPCPJ38_RxVSuITy4tLonPTLE1NLQwsjQ3AgDuGTA0">
+<input type="hidden" name="p_skip_confirm_fl" value="N">
+<div class="aaHeaderwrapper">
+<div id="aaCenssaprofileDispProfHdrProfessionalDesignations" class="aaHeading">
+<h3>Professional Designations</h3>
+<ul class="aaSubmission aaCenssaprofileSubmit"><li><label></label><input type="submit" value="Edit" class="aaSubmitButton" id="aaCenssaprofileDispProfHdrProfessionalDesignationsEdit"></li></ul>
+</div> <!-- end aaCenssaprofileDispProfHdrProfessionalDesignations -->
+</div> <!-- End Header wrapper -->
+</form>
+							<li class="aaProfileAttr"><label>Professional Designations:</label><div class="aaProfileDataWrapper"><p></p></div><div class="aaInlineValidationWrapper"><div class="aaValidationWrapper-Inner"><span class="aaInlineValidationIcon"></span><span class="aaValidationTxt"></span></div></div></li><!-- close li class="aaProfileAttr" -->
+						</ul><!-- close ul class="aaFormFields" -->
+					</div> <!-- end aaCenssaprofileDispProfDtlProfessionalDesignations -->
+					<br>
+					<div id="aaCenssaprofileDispProfDtlCityofChicagoInformation" class="aaCenssaprofile">
+						<ul class="aaFormFields">
+							<form action="CENSSAINDPROFILE.section_update" method="GET">
+<input type="hidden" name="p_cust_id" value="1182972">
+<input type="hidden" name="p_profile_ty" value="INDIVIDUAL_PROFILE">
+<input type="hidden" name="p_section_nm" value="City of Chicago Information">
+<input type="hidden" name="p_format" value="110">
+<input type="hidden" name="p_referrer" value="http://dev.bomachi.esuitetools.com/users/ssa/eNrLKCkpsNLXT0kt00vKz01MzsjUSy0uzSxJLcnPzynWS87P1YeKA5UUFyfqJ6fmAanMvJSCovy0zJxUvZTM4oKcxMp4KN--AMaKL6m09fRz8QzzdAl19IkPCPJ38_RxVSuITy4tLonPTLE1NLQwsjQ3AgDuGTA0">
+<input type="hidden" name="p_skip_confirm_fl" value="N">
+<div class="aaHeaderwrapper">
+<div id="aaCenssaprofileDispProfHdrCityofChicagoInformation" class="aaHeading">
+<h3>City of Chicago Information</h3>
+<ul class="aaSubmission aaCenssaprofileSubmit"><li><label></label><input type="submit" value="Edit" class="aaSubmitButton" id="aaCenssaprofileDispProfHdrCityofChicagoInformationEdit"></li></ul>
+</div> <!-- end aaCenssaprofileDispProfHdrCityofChicagoInformation -->
+</div> <!-- End Header wrapper -->
+</form>
+							<li class="aaProfileAttrNvar"><label>Ward Number:</label><div class="aaProfileDataWrapper"><p>46</p></div><div class="aaInlineValidationWrapper"><div class="aaValidationWrapper-Inner"><span class="aaInlineValidationIcon"></span><span class="aaValidationTxt"></span></div></div></li><!-- close li class="aaProfileAttrNvar" -->
+						</ul><!-- close ul class="aaFormFields" -->
+					</div> <!-- end aaCenssaprofileDispProfDtlCityofChicagoInformation -->
+					<form action="/bomachidevssa/CENSSAINDPROFILE.confirm_profile" method="POST">
+						<input type="hidden" name="p_cust_id" value="1182972">
+						<input type="hidden" name="p_profile_ty" value="INDIVIDUAL_PROFILE">
+						<input type="hidden" name="p_format" value="110">
+						<input type="hidden" name="p_referrer" value="http://dev.bomachi.esuitetools.com/users/ssa/eNrLKCkpsNLXT0kt00vKz01MzsjUSy0uzSxJLcnPzynWS87P1YeKA5UUFyfqJ6fmAanMvJSCovy0zJxUvZTM4oKcxMp4KN--AMaKL6m09fRz8QzzdAl19IkPCPJ38_RxVSuITy4tLonPTLE1NLQwsjQ3AgDuGTA0">
+						<div id="aaCenssaprofileDispProfSbmtBtn" class="aaProfileSbmtBtnWrapper">
+							Please confirm the above information is correct by clicking the "<b>Confirm</b>" button below.
+							<br>
+							<ul class="aaSubmission aaCenssaprofileSubmit"><li><label></label><input type="submit" value="Confirm" class="aaSubmitButton" name="SubmitButton" id="aaCenssaprofileDispProfConfirm"></li></ul>
+
+						</div> <!-- end aaCenssaprofileDispProfSbmtBtn -->
+					</form>
+				</div><!-- close div class="aaStyleInner" --></div><!-- close div class="aaStyleOuter" --><div class="clear">
+			</div> <!-- end "clear" -->
+
+		</div>  <!---End 16 Col -->
+
+	</div><!---End AA Container -->
+
+</div> <!---End AA Super Container -->
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+  if ($(".aaTabularTable").has("thead").not(".aaTableNoEnhance, .dataTable").length) {
+     $(".aaTabularTable").has("thead").not(".aaTableNoEnhance, .dataTable").dataTable( {
+       "bInfo": true,
+       "iDisplayLength": 100,
+       "sPaginationType": "full_numbers",
+       "aLengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+       "aaSorting": [],
+       "fnInitComplete": function(oSettings, json) {
+         $(".dataTables_length select").removeAttr("name"); // remove name from datatable length LOV
+         }
+     } );
+  }
+});
+
+</script>
+
+
+
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div></body>
+
+</html>
